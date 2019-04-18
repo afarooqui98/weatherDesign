@@ -1,0 +1,82 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*body {
+    min-height: 100vh;   needed to make sure body fills up window 
+    flex: 1;
+}*/
+
+/*font-family: 'Saira Extra Condensed', sans-serif;
+font-family: 'IBM Plex Sans', sans-serif;*/
+
+header{
+	min-height: 100vh;  /* header should also fill window */
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	background-color: red;	
+	background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+}
+
+.title-header{
+	display: flex;
+	flex-flow: column wrap;
+	text-align: center;
+
+	flex: 1;
+}
+
+.title-header > h1{
+	font-size: 45px;
+	color: white;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.title-header > h2{
+	font-size: 20px;
+	color: rgb(98, 59, 156);
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.form-header{
+	display: flex;
+	flex-direction: column;
+
+	flex: 1;
+}
+
+.form-header > h1{
+	font-size: 22px;
+	color: white;
+	font-family: 'IBM Plex Sans', sans-serif;
+
+	margin-left: 17%;	
+}
+
+.form-inner{
+	text-align: center;
+}
+
+#field{
+	border: none;
+	background-color: rgb(98, 59, 156);
+	color: white;
+	font-family: 'IBM Plex Sans', sans-serif;	
+	font-size: 20px;		
+}
+
+#submit{
+	font-family: 'IBM Plex Sans', sans-serif;	
+	font-size: 16px;
+	color: white;
+	background-color: rgb(146, 178, 229);
+	border: none;
+
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
