@@ -3,10 +3,10 @@
 	padding: 0;
 }
 
-/*body {
-    min-height: 100vh;   needed to make sure body fills up window 
+body {
+    /*min-height: 100vh; */  needed to make sure body fills up window 
     flex: 1;
-}*/
+}
 
 /*font-family: 'Saira Extra Condensed', sans-serif;
 font-family: 'IBM Plex Sans', sans-serif;*/
@@ -16,8 +16,6 @@ header{
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-
-	background-color: red;	
 	background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
 }
 
@@ -126,7 +124,7 @@ header{
 	color: white;
 	font-size: 35px;
 	font-weight: 100;
-	
+
 	line-height: 100%;
 	padding-right: 10%;
 }
@@ -144,3 +142,51 @@ header{
 	width: 10%;
 }
 
+main{
+	min-height: 100vh;  /* header should also fill window, disable in web and tablet */
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+.weather-main{
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-main{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+
+	padding-top: 5%;
+}
+
+.header-main > img{
+	width: 10%;
+}
+
+.weather-main > h1{
+	font-family: 'Saira Extra Condensed', sans-serif;
+	font-size: 25px;
+	font-weight: 200;
+
+	padding-right: 8%;	
+}
+
+.weather-main > img{
+	width: 40%;
+}
+
+.weather-main > h2{
+	font-family: 'Saira Extra Condensed', sans-serif;
+	font-size: 75px;
+	font-weight: 200;
+
+	padding-left: 8%;
+}
