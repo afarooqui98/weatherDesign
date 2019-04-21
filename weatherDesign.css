@@ -67,6 +67,10 @@ header{
 	padding-bottom: 3%;	
 }
 
+.right{
+	display: none;
+}
+
 .form-inner{
 	text-align: center;
 }
@@ -278,13 +282,6 @@ main{
 	}
 
 	.form-header > h1{
-	/*	
-		
-		flex-wrap: nowrap;
-		color: white;
-		font-family: 'IBM Plex Sans', sans-serif;
-		padding-bottom: 3%;	
-	*/
 		flex: 1;
 		font-size: 2.6vw;
 		padding-top: 3%;
@@ -333,25 +330,49 @@ main{
 	.img-header{
 		display: flex;
 		flex: 5;
-		flex-direction: column;
+		flex-direction: row-reverse;
 		justify-content: flex-start;
 		align-items: center;
 	}
+
 	.left{
-		flex: 1;
+		align-items: center;
 	}
+
+	.left > img{
+		width: 75%;
+	}
+
 	.right{
+		display: inline;
 		flex: 1;
+		clip-path: circle(40%);
+		position: relative;
+
+		width: 10%;
 	}
-	.img-header > img{
-		width: 100%;
+
+	.topograph{
+		/*position: absolute;*/
+		top: 0;
+		bottom: 0;
+
+		width: 90%;
+	}
+
+	.city{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 90%;
 	}
 
 	.temp-header{
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: center;
 
 	}
 

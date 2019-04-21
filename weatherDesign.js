@@ -34,9 +34,10 @@ function makeCorsRequest(city,state) {
 		let status = list[i]["weather"][0]["description"];
 
 		let date = new Date(list[i]["dt_txt"] + ' UTC');
-		hour_24 = date.getHours().toString();
-		hour = (hour_24 > 12)? hour_24 -12 : hour_24;
-		hour = (hour_24 == '00')? 12 : hour_24;
+		let hour = date.getHours().toString();
+		let hour_24 = date.getHours().toString();
+		hour = (hour > 12)? hour -12 : hour;
+		hour = (hour == '00')? 12 : hour;
 		suffix = (hour_24 >= 12)? 'pm' : 'am';
 		console.log(hour+":00",suffix);
 		
@@ -68,15 +69,16 @@ function makeCorsRequest(city,state) {
 		let status = object["weather"][0]["description"];
 
 		let date = new Date();
-		hour_24 = date.getHours().toString();
-		hour = (hour_24 > 12)? hour_24 -12 : hour_24;
-		hour = (hour_24 == '00')? 12 : hour_24;
+		let hour = date.getHours().toString();
+		let hour_24 = date.getHours().toString();
+		hour = (hour > 12)? hour -12 : hour;
+		hour = (hour == '00')? 12 : hour;
 		suffix = (hour_24 >= 12)? 'pm' : 'am';
 		console.log(hour+":00",suffix);
 		
 		document.getElementById("cur-weather-temp").innerHTML = temp.toString().substr(0,2) + "&#176;";
 		
-		document.getElementById("cur-weather-time").innerHTML = hour+":00 "+suffix;
+		document.getElementById("cur-weather-time").innerHTML = hour+suffix;
 
 		
 	};
@@ -89,4 +91,4 @@ function makeCorsRequest(city,state) {
 	xhr2.send();
 }
 
-// run this code to make request when this script file gets executed 
+// run this code to make request when this script file gets executed
