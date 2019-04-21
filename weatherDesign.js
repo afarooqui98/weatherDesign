@@ -1,5 +1,9 @@
 "strict mode";
 
+function getCity(){
+	let city = document.getElementById("field").value;
+	makeCorsRequest(city, "CA");
+}
 
 function createCORSRequest(method, url) {
 	let xhr = new XMLHttpRequest();

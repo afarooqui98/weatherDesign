@@ -340,7 +340,8 @@ main{
 	}
 
 	.left > img{
-		width: 50%;
+		padding-bottom: 8%;
+		width: 40%;
 	}
 
 	.right{
