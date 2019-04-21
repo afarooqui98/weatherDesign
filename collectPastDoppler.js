@@ -50,10 +50,11 @@ function getTenImages() {
 
 function populateImages(){
 	getTenImages();
-	for(let i = 0; i < 10; i++){
-		document.getElementById(imageArray[i].id).src = imageArray[i].src;
-	}
+	// for(let i = 0; i < 10; i++){
+	// 	document.getElementById(imageArray[i].id.toString()).src = imageArray[i].src;
+	// }
 }
+
 
 
 

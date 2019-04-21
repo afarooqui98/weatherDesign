@@ -203,7 +203,7 @@ main{
 }
 
 .weather-main > img{
-	width: 40%;
+	width: 28%;
 }
 
 .weather-main > h2{
@@ -340,7 +340,7 @@ main{
 	}
 
 	.left > img{
-		width: 75%;
+		width: 50%;
 	}
 
 	.right{

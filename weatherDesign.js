@@ -31,7 +31,7 @@ function makeCorsRequest(city,state) {
 		for (let i = 0; i < 5; i++) {
 
 		let temp = list[i]["main"]["temp"];
-		let status = list[i]["weather"][0]["description"];
+		let status = list[i]["weather"][0]["icon"];
 
 		let date = new Date(list[i]["dt_txt"] + ' UTC');
 		let hour = date.getHours().toString();
@@ -44,6 +44,8 @@ function makeCorsRequest(city,state) {
 		document.getElementById("weather-temp"+i.toString()).innerHTML = temp.toString().substr(0,2) + "&#176;";
 		
 		document.getElementById("weather-time"+i.toString()).innerHTML = hour+":00 "+suffix;
+
+		setImage(status, i + 1);
 
 		}
 		// let l1 = list[0]["weather"];
@@ -66,7 +68,7 @@ function makeCorsRequest(city,state) {
 		
 		
 		let temp = object["main"]["temp"];
-		let status = object["weather"][0]["description"];
+		let status = object["weather"][0]["icon"];
 
 		let date = new Date();
 		let hour = date.getHours().toString();
@@ -80,7 +82,7 @@ function makeCorsRequest(city,state) {
 		
 		document.getElementById("cur-weather-time").innerHTML = hour+suffix;
 
-		
+		setImage(status, 0);
 	};
 
 	xhr2.onerror = function() {
@@ -89,6 +91,54 @@ function makeCorsRequest(city,state) {
 
 	// Actually send request to server
 	xhr2.send();
+}
+
+
+function setImage(status, index){
+	switch(status){
+		case "01d":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/clearsky.svg";
+			break;
+		case "01n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/clear-night.svg";
+			break;
+		case "02d":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/fewclouds-day.svg";
+			break;
+		case "02n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/fewclouds-night.svg";
+			break;
+		case "03d":
+		case "03n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/scatteredclouds.svg";
+			break;
+		case "04d":
+		case "04n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/brokencloud.svg";
+			break;
+		case "09d":
+		case "09n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/showerrain.svg";
+			break;
+		case "10d":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/rain-day.svg";
+			break;
+		case "10n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/rain-night.svg";
+			break;
+		case "11d":
+		case "11n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/thunderstorms.svg";
+			break;
+		case "13d":
+		case "13n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/snow.svg";
+			break;
+		case "50d":
+		case "50n":
+			document.getElementById("weather-icon"+index.toString()).src = "assets/mist.svg";
+			break;
+	}	
 }
 
 // run this code to make request when this script file gets executed
