@@ -7,7 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="reset.css">
 		<link rel="stylesheet" type="text/css" href="weatherDesign.css">
 		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Saira+Extra+Condensed" rel="stylesheet">
+		<script type="text/javascript" src="weatherDesign.js"></script>
 	</head>
+
 
 	<body>
 		<header>
@@ -31,20 +33,20 @@
 				</div>
 			</div>
 			<div class = "img-header"> <!--TODO: add js to load svg and text dynamically -->
-				<div clas = "rigt"></div>
+				<div class = "right"></div>
 				<div class = "left">
-					<img src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
+					<img class= "weather-icon" src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
 					<div class = "temp-header">
 						<div class = "temp-inner"> 
 							<h1>current</h1>
-							<h1>12PM</h1>
+							<h1 id= "cur-weather-time">12PM</h1>
 						</div>
-						<h2>67&#176;</h2>
+						<h2 id= "cur-weather-temp">67&#176;</h2>
 					</div>
 				</div>
 			</div>
 			<div class = "footer-header">
-				<img src="C:\Users\Ahmed\Desktop\SQ2019\ECS162\p2\weatherDesign\assets\upArrow.svg">
+				<img id= "weather-icon0" src="C:\Users\Ahmed\Desktop\SQ2019\ECS162\p2\weatherDesign\assets\upArrow.svg">
 			</div>
 		</header>
 		<main> <!--TODO: add JS code for time/temp requests-->
@@ -52,35 +54,38 @@
 				<img src="C:\Users\Ahmed\Desktop\SQ2019\ECS162\p2\weatherDesign\assets\downArrow.svg">
 			</div>
 			<div class="weather-main">
-				<h1>1:00 PM</h1>
-				<img src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
-				<h2>67&#176;</h2>
+				<h1 id= "weather-time0">1:00 PM</h1>
+				<img id= "weather-icon0" src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
+				<h2 id= "weather-temp0">67&#176;</h2>
 			</div>
 			<hr>
 			<div class="weather-main">
-				<h1>2:00 PM</h1>
-				<img src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
-				<h2>76&#176;</h2>
+				<h1 id= "weather-time1">2:00 PM</h1>
+				<img id= "weather-icon1" src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
+				<h2 id= "weather-temp1">76&#176;</h2>
 			</div>
 			<hr>
 			<div class="weather-main">
-				<h1>2:00 PM</h1>
-				<img src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
-				<h2>66&#176;</h2>
+				<h1 id= "weather-time2">2:00 PM</h1>
+				<img id= "weather-icon2" src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
+				<h2 id= "weather-temp2">66&#176;</h2>
 			</div>
 			<hr>
 			<div class="weather-main">
-				<h1>3:00 PM</h1>
-				<img src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
-				<h2>65&#176;</h2>
+				<h1 id= "weather-time3">3:00 PM</h1>
+				<img id= "weather-icon3" src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">
+				<h2 id= "weather-temp3">65&#176;</h2>
 			</div>
 			<hr>
 			<div class="weather-main">
-				<h1>4:00 PM</h1>
-				<img src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">	
-				<h2>65&#176;</h2>				
+				<h1 id= "weather-time4">4:00 PM</h1>
+				<img id= "weather-icon4" src="C:\Users\17747\OneDrive\Desktop\ECS162\hw3\assets\fewclouds-day.svg">	
+				<h2 id= "weather-temp4">65&#176;</h2>				
 			</div>
 		</main> 
 	</body>
+
+	<script language="javascript">makeCorsRequest("Davis", "CA");</script>
+
 </html>
 
