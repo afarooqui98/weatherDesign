@@ -87,6 +87,7 @@ function makeCorsRequest(city,state) {
 		document.getElementById("cur-weather-time").innerHTML = hour+suffix;
 
 		setImage(status, 0);
+		setImage(status, 6);
 	};
 
 	xhr2.onerror = function() {

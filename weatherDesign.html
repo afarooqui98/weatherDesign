@@ -13,27 +13,69 @@
 
 	<body>
 		<header>
-			<div class = "title-header">
-				<h1 class = "title-header-tab-web">
-					Local Weather Six Hour Forecast
-				</h1>
-				<h1 class = "title-header-mobile">
-					Local Weather
-				</h1>
-				<h1 class= "title-header-mobile">
-					Six Hour Forecast
-				</h1>
-				<h2>Northern California with doppler radar</h2>
-			</div>
-			<div class= "form-header">
-				<h1>Forecast For</h1>
-				<div class= "form-inner">
-					<input id= "field" name = "form" placeholder="Davis"/>
-					<input id= "submit" onclick="getCity()" for= "form" type= "submit"/>
+			<div class = "header-left">
+				<div class = "title-header">
+					<h1 class = "title-header-tab-web">
+						Local Weather Six Hour Forecast
+					</h1>
+					<h1 class = "title-header-mobile">
+						Local Weather
+					</h1>
+					<h1 class= "title-header-mobile">
+						Six Hour Forecast
+					</h1>
+					<h2>Northern California with doppler radar</h2>
+				</div>
+				<div class= "form-header">
+					<h1>Forecast For</h1>
+					<div class= "form-inner">
+						<input id= "field" name = "form" placeholder=" Davis"/>
+						<input id= "submit" onclick="getCity()" for= "form" type= "submit"/>
+					</div>
+				</div>
+				<div class= "img-header"> <!--TODO: add js to load svg and text dynamically -->
+					<div class= "right">
+						<img class= "topograph" src= "http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
+						<img class= "city" src= "http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif ">
+						<img id="doppler_0" src="">
+						<img id="doppler_1" src="">
+						<img id="doppler_2" src="">
+						<img id="doppler_3" src="">
+						<img id="doppler_4" src="">
+						<img id="doppler_5" src="">
+						<img id="doppler_6" src="">
+						<img id="doppler_7" src="">
+						<img id="doppler_8" src="">
+						<img id="doppler_9" src="">
+					</div>
+					<div class = "left">
+						<img id= "weather-icon0" src="">
+						<div class = "temp-header">
+							<div class = "temp-inner"> 
+								<h1>current</h1>
+								<h1 id= "cur-weather-time"></h1>
+							</div>
+							<img id= "weather-icon6" src="">
+							<h2 id= "cur-weather-temp"></h2>
+						</div>
+					</div>
+<!-- 					<div class = "web-left">
+						<img id= "weather-icon0" src="">
+						<div class = "temp-header">
+							<div class = "temp-inner"> 
+								<h1>current</h1>
+								<h1 id= "cur-weather-time"></h1>
+							</div>
+							<h2 id= "cur-weather-temp"></h2>
+						</div>
+					</div> -->
+				</div>
+				<div class = "footer-header">
+					<img src="assets\upArrow.svg">
 				</div>
 			</div>
-			<div class= "img-header"> <!--TODO: add js to load svg and text dynamically -->
-				<div class= "right">
+			<div class = "header-right">
+				<div class= "web-right">
 					<img class= "topograph" src= "http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
 					<img class= "city" src= "http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif ">
 					<img id="doppler_0" src="">
@@ -47,19 +89,6 @@
 					<img id="doppler_8" src="">
 					<img id="doppler_9" src="">
 				</div>
-				<div class = "left">
-					<img id= "weather-icon0" src="">
-					<div class = "temp-header">
-						<div class = "temp-inner"> 
-							<h1>current</h1>
-							<h1 id= "cur-weather-time"></h1>
-						</div>
-						<h2 id= "cur-weather-temp"></h2>
-					</div>
-				</div>
-			</div>
-			<div class = "footer-header">
-				<img src="assets\upArrow.svg">
 			</div>
 		</header>
 		<main> <!--TODO: add JS code for time/temp requests-->

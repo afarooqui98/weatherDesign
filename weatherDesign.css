@@ -15,10 +15,18 @@ header{
 	min-height: 100vh;  /* header should also fill window, disable in web and tablet */
 	overflow: hidden;
 	display: flex;
-	flex-direction: column;
+	
 	background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
 }
+.header-rigth{
+	display: none;
+}
+.header-left{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 
+}
 .title-header{
 	display: flex;
 	flex-flow: column wrap;
@@ -55,6 +63,7 @@ header{
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+	justify-content: center;
 
 }
 
@@ -68,6 +77,9 @@ header{
 }
 
 .right{
+	display: none;
+}
+.web-right{
 	display: none;
 }
 
@@ -103,7 +115,9 @@ header{
 	justify-content: center;
 	align-items: center;
 }
-
+.web-left{
+	display: none;
+}
 
 .left{
 	flex: 1;
@@ -233,6 +247,15 @@ main{
 		filter: drop-shadow(0 0 30px #333);
 	}
 
+	.header-left{
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+	}
+	.header-right{
+		display: none;
+	}
 	.title-header{
 		display: flex;
 		flex-flow: row wrap;
@@ -334,7 +357,9 @@ main{
 		justify-content: flex-start;
 		align-items: center;
 	}
-
+	.web-left{
+		display: none;
+	}
 	.left{
 		align-items: center;
 	}
@@ -453,4 +478,263 @@ main{
 
 }
 
-@media only screen and (min-width: 780px){}
+@media only screen and (min-width: 781px){
+	body {
+		display: flex;
+		flex-direction: column;
+		min-width: 100%;
+	    min-height: 100vh;   
+	}
+
+	header{
+
+		flex:2;
+		min-height: 0vh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+		
+		border-bottom: solid 0px #fff;
+		filter: drop-shadow(0 0 30px #333);
+	}
+	.header-left{
+		flex: 2;
+		display: flex;
+
+	}
+	.header-right{
+		flex: 1;
+		display: flex;
+	}
+
+	.title-header{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-content: center;
+		flex: 4;
+		margin-top: 5%;
+	}
+
+	.title-header-tab-web{
+		display: inline;
+	}
+
+	.title-header-mobile{
+		display: none;
+	}
+
+	.title-header > h1{
+		
+		font-size: 40pt;
+		font-weight: 600;
+		color: white;
+		justify-content: center;
+		align-content: center;
+		font-family: 'IBM Plex Sans', sans-serif;
+	}
+
+	.title-header > h2{
+		font-size: 30pt;
+		margin-top: 1.5%;
+		color: rgb(98, 59, 156);
+		justify-content: center;
+		align-content: center;
+		font-family: 'IBM Plex Sans', sans-serif;
+	}
+
+	.form-header{
+		display: flex;
+		flex-direction: row;
+		flex: 1;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 3%;
+		padding-bottom: 0%;	
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	.form-header > h1{
+		flex: 1;
+		font-size: 20pt;
+		padding-top: 2%;
+		margin-right: 0%;
+		margin-left: 0%;
+	}
+
+	.form-inner{
+		flex: 3;
+		display: flex;
+		flex-direction: row;
+		text-align: center;
+		align-content: center;
+	}
+
+
+	#field{
+		flex: 5;
+		border: none;
+		background-color: rgb(98, 59, 156);
+		color: white;
+		font-size: 18pt;
+		font-family: 'IBM Plex Sans', sans-serif;	
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-right: 5%;
+		width: 80%;
+
+	}
+
+	#submit{
+		flex: 1;
+		font-family: 'IBM Plex Sans', sans-serif;	
+		font-size: 14pt;
+		color: white;
+		background-color: rgb(146, 178, 229);
+		border: none;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-right: 5%;
+		padding-bottom: 0.75%;
+		padding-left: 5%;
+		padding-right: 5%;
+
+	}
+
+	.img-header{
+		display: flex;
+		flex: 5;
+		flex-direction: column;
+		margin-top: 3%;
+		margin-bottom: 5%;
+	}
+
+	#weather-icon0{
+		display: none;
+	}
+
+	.left{
+		display: flex;
+
+	}
+/*	.web-left{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	
+}*/
+/*	.web-left > img{
+		padding-bottom: 8%;
+		width: 40%;
+	}*/
+
+	.web-right{
+		display: inline;
+		flex: 1;
+		clip-path: circle(40%);
+		position: relative;
+
+		width: 10%;
+	}
+
+	.topograph{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+
+	}
+
+	.city{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+	}
+
+	.temp-header{
+		display: flex;
+		flex-direction: row;
+
+	}
+
+	.temp-header > h2{
+		font-family: 'Saira Extra Condensed', sans-serif;
+		color: white;
+		font-size: 85pt;	
+		font-weight: 100;
+		padding-left: 30%;
+	}
+
+	.temp-inner{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-right: 0px;
+	}
+
+	.temp-inner > h1{
+		font-family: 'Saira Extra Condensed', sans-serif;
+		color: white;
+		font-size: 35pt;
+		font-weight: 100;
+
+		line-height: 100%;
+		padding-right: 60%;
+	}
+
+	.footer-header{
+		display: none;
+	}
+
+
+
+	main{
+		flex: 1;
+		min-height: 0vh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		background-color: white;
+	}
+	.header-main{
+		display: none;
+	}
+
+
+	.weather-main{
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+	}
+
+
+	.weather-main > h1{
+		margin-top: 5%;
+		font-family: 'Saira Extra Condensed', sans-serif;
+		font-size: 25pt;
+		font-weight: 200;
+
+		padding-right: 0%;
+		padding-bottom: 10%;	
+	}
+
+	.weather-main > img{
+		width: 30%;
+	}
+
+	.weather-main > h2{
+		font-family: 'Saira Extra Condensed', sans-serif;
+		font-size: 65pt;
+		font-weight: 200;
+
+		padding-left: 0%;
+		padding-top: 10%;
+	}
+
+}
