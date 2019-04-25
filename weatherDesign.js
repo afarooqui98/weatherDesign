@@ -1,7 +1,7 @@
 "strict mode";
 
 let sacLat = 38.5816;
-let sacLon = 121.4944;
+let sacLon = -121.4944;
 
 function getCity(){
 	let city = document.getElementById("field").value;
@@ -97,13 +97,13 @@ function makeCorsRequest(city,state) {
 		
 		document.getElementById("cur-weather-time").innerHTML = hour+suffix;
 
-		// let lat = object["coord"]["lat"];
-		// let lon = object["coord"]["lon"];
+		let lat = object["coord"]["lat"];
+		let lon = object["coord"]["lon"];
 
-		// if(getDistanceFromLatLonInKm(sacLat, sacLon, lat, lon) == false){
-		// 	alert("Not found");
-		// 	makeCorsRequest("Davis", "CA");
-		// }
+		if(getDistanceFromLatLonInKm(sacLat, sacLon, lat, lon) == false){
+			alert("Not found");
+			makeCorsRequest("Davis", "CA");
+		}
 
 		setImage(status, 0);
 		setImage(status, 6);
@@ -188,7 +188,7 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2){
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
   var d = R * c; // Distance in km
 
-  if(d > 1000){
+  if(d > 260){
   	return false;	
   }else{
   	return true;
