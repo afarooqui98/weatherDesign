@@ -4,29 +4,33 @@
 }
 
 body {
-    /*min-height: 100vh; */  needed to make sure body fills up window 
     flex: 1;
+    position: relative;
 }
 
-/*font-family: 'Saira Extra Condensed', sans-serif;
-font-family: 'IBM Plex Sans', sans-serif;*/
 
 header{
-	min-height: 100vh;  /* header should also fill window, disable in web and tablet */
+	min-height: 100vh;  
 	overflow: hidden;
 	display: flex;
 	
 	background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+
+	position: absolute;
+	/*animation: slide-up 0.5s steps(600);*/
 }
-.header-rigth{
+
+.header-right{
 	display: none;
 }
+
 .header-left{
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 
 }
+
 .title-header{
 	display: flex;
 	flex-flow: column wrap;
@@ -79,6 +83,7 @@ header{
 .right{
 	display: none;
 }
+
 .web-right{
 	display: none;
 }
@@ -142,6 +147,10 @@ header{
 
 }
 
+.temp-header > img{
+	display: none;
+}
+
 .temp-header > h2{
 	font-family: 'Saira Extra Condensed', sans-serif;
 	color: white;
@@ -178,6 +187,16 @@ header{
 
 .footer-header > img{
 	width: 10%;
+}
+
+@keyframes slide-up{
+	from{bottom: 0vh;}
+	to{bottom: 100vh;}
+}
+
+@keyframes slide-down{
+	from{bottom: 100vh;}
+	to{bottom: 0vh;}
 }
 
 main{
@@ -228,11 +247,11 @@ main{
 	padding-left: 8%;
 }
 
-@media only screen and (max-width: 780px) and (min-width: 496px){
+@media only screen and (max-width: 1024px) and (min-width: 496px){
 	body {
 		display: flex;
 		flex-direction: column;
-	    min-height: 100vh;   needed to make sure body fills up window 
+	    min-height: 100vh; 
 	}
 
 	header{
@@ -242,6 +261,8 @@ main{
 		display: flex;
 		flex-direction: column;
 		background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+
+		position: relative;
 		
 		border-bottom: solid 0px #fff;
 		filter: drop-shadow(0 0 30px #333);
@@ -253,9 +274,11 @@ main{
 		flex-direction: column;
 
 	}
+
 	.header-right{
 		display: none;
 	}
+
 	.title-header{
 		display: flex;
 		flex-flow: row wrap;
@@ -357,9 +380,11 @@ main{
 		justify-content: flex-start;
 		align-items: center;
 	}
+
 	.web-left{
 		display: none;
 	}
+
 	.left{
 		align-items: center;
 	}
@@ -372,7 +397,6 @@ main{
 	.right{
 		display: inline;
 		flex: 1;
-		clip-path: circle(40%);
 		position: relative;
 
 		width: 10%;
@@ -382,8 +406,10 @@ main{
 		/*position: absolute;*/
 		top: 0;
 		bottom: 0;
+		clip-path: circle(40%);
 
 		width: 90%;
+		filter: grayscale(100%);
 	}
 
 	.city{
@@ -391,7 +417,19 @@ main{
 		top: 0;
 		bottom: 0;
 		left: 0;
+		clip-path: circle(40%);
 		width: 90%;
+	}
+
+	.doppler_img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 90%;
+		clip-path: circle(40%);
+
+		display: inline;
 	}
 
 	.temp-header{
@@ -400,6 +438,10 @@ main{
 		justify-content: center;
 		align-items: center;
 
+	}
+
+	.temp-header > img{
+		display: none;
 	}
 
 	.temp-header > h2{
@@ -439,6 +481,7 @@ main{
 		flex-direction: row;
 		background-color: white;
 	}
+
 	.header-main{
 		display: none;
 	}
@@ -478,7 +521,7 @@ main{
 
 }
 
-@media only screen and (min-width: 781px){
+@media only screen and (min-width: 1025px){
 	body {
 		display: flex;
 		flex-direction: column;
@@ -494,6 +537,8 @@ main{
 		display: flex;
 		flex-direction: row;
 		background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+
+		position: relative;
 		
 		border-bottom: solid 0px #fff;
 		filter: drop-shadow(0 0 30px #333);
@@ -506,6 +551,8 @@ main{
 	.header-right{
 		flex: 1;
 		display: flex;
+		justify-content: center;
+		align-content: center;
 	}
 
 	.title-header{
@@ -620,45 +667,57 @@ main{
 		display: flex;
 
 	}
-/*	.web-left{
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	
-}*/
-/*	.web-left > img{
-		padding-bottom: 8%;
-		width: 40%;
-	}*/
 
 	.web-right{
-		display: inline;
+		display: flex;
 		flex: 1;
-		clip-path: circle(40%);
+		flex-direction: column;
 		position: relative;
-
-		width: 10%;
+		justify-content: center;
+		align-content: center;
 	}
 
 	.topograph{
 		position: absolute;
+		clip-path: circle(40%);
 		top: 0;
 		bottom: 0;
+
+		width: 90%;
+		filter: grayscale(100%);
 
 	}
 
 	.city{
 		position: absolute;
+		clip-path: circle(40%);
 		top: 0;
 		bottom: 0;
 		left: 0;
 
+		width: 90%;
+
+	}
+
+	.doppler_img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 90%;
+		clip-path: circle(40%);
+
+		/*display: inline;*/
 	}
 
 	.temp-header{
 		display: flex;
 		flex-direction: row;
 
+	}
+
+	.temp-header > img{
+		display: inline;
 	}
 
 	.temp-header > h2{
@@ -690,8 +749,6 @@ main{
 		display: none;
 	}
 
-
-
 	main{
 		flex: 1;
 		min-height: 0vh;
@@ -700,6 +757,7 @@ main{
 		flex-direction: row;
 		background-color: white;
 	}
+
 	.header-main{
 		display: none;
 	}

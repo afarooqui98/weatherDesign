@@ -1,5 +1,8 @@
 "strict mode";
 
+let sacLat = 38.5816;
+let sacLon = 121.4944;
+
 function getCity(){
 	let city = document.getElementById("field").value;
 	makeCorsRequest(city, "CA");
@@ -49,6 +52,14 @@ function makeCorsRequest(city,state) {
 		
 		document.getElementById("weather-time"+i.toString()).innerHTML = hour+":00 "+suffix;
 
+		// let lat = list[i]["coord"]["lat"];
+		// let lon = list[i]["coord"]["lon"];
+
+		// if(getDistanceFromLatLonInKm(sacLat, sacLon, lat, lon) == false){
+		// 	alert("Not found");
+		// 	makeCorsRequest("Davis", "CA");
+		// }
+
 		setImage(status, i + 1);
 
 		}
@@ -85,6 +96,14 @@ function makeCorsRequest(city,state) {
 		document.getElementById("cur-weather-temp").innerHTML = temp.toString().substr(0,2) + "&#176;";
 		
 		document.getElementById("cur-weather-time").innerHTML = hour+suffix;
+
+		// let lat = object["coord"]["lat"];
+		// let lon = object["coord"]["lon"];
+
+		// if(getDistanceFromLatLonInKm(sacLat, sacLon, lat, lon) == false){
+		// 	alert("Not found");
+		// 	makeCorsRequest("Davis", "CA");
+		// }
 
 		setImage(status, 0);
 		setImage(status, 6);
@@ -144,6 +163,40 @@ function setImage(status, index){
 			document.getElementById("weather-icon"+index.toString()).src = "assets/mist.svg";
 			break;
 	}	
+}
+
+function slideUp(){
+	document.getElementById("header").style.animation = "slide-up 0.5s steps(600)";
+	setTimeout(function(){document.getElementById("header").style.bottom = "100vh";}, 500);
+}
+
+function slideDown(){
+	document.getElementById("header").style.animation = "slide-down 0.5s steps(600)";
+	setTimeout(function(){document.getElementById("header").style.bottom = "0vh";}, 500);
+}
+
+
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2){
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+
+  if(d > 1000){
+  	return false;	
+  }else{
+  	return true;
+  }
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
 }
 
 // run this code to make request when this script file gets executed

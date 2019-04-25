@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<header>
+		<header id="header">
 			<div class = "header-left">
 				<div class = "title-header">
 					<h1 class = "title-header-tab-web">
@@ -33,20 +33,11 @@
 						<input id= "submit" onclick="getCity()" for= "form" type= "submit"/>
 					</div>
 				</div>
-				<div class= "img-header"> <!--TODO: add js to load svg and text dynamically -->
+				<div class= "img-header"> 
 					<div class= "right">
 						<img class= "topograph" src= "http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
 						<img class= "city" src= "http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif ">
-						<img id="doppler_0" src="">
-						<img id="doppler_1" src="">
-						<img id="doppler_2" src="">
-						<img id="doppler_3" src="">
-						<img id="doppler_4" src="">
-						<img id="doppler_5" src="">
-						<img id="doppler_6" src="">
-						<img id="doppler_7" src="">
-						<img id="doppler_8" src="">
-						<img id="doppler_9" src="">
+						<img class="doppler_img" id="doppler_0" src="">
 					</div>
 					<div class = "left">
 						<img id= "weather-icon0" src="">
@@ -59,41 +50,22 @@
 							<h2 id= "cur-weather-temp"></h2>
 						</div>
 					</div>
-<!-- 					<div class = "web-left">
-						<img id= "weather-icon0" src="">
-						<div class = "temp-header">
-							<div class = "temp-inner"> 
-								<h1>current</h1>
-								<h1 id= "cur-weather-time"></h1>
-							</div>
-							<h2 id= "cur-weather-temp"></h2>
-						</div>
-					</div> -->
 				</div>
 				<div class = "footer-header">
-					<img src="assets\upArrow.svg">
+					<img onclick="slideUp()" src="assets\upArrow.svg">
 				</div>
 			</div>
 			<div class = "header-right">
 				<div class= "web-right">
 					<img class= "topograph" src= "http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
 					<img class= "city" src= "http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif ">
-					<img id="doppler_0" src="">
-					<img id="doppler_1" src="">
-					<img id="doppler_2" src="">
-					<img id="doppler_3" src="">
-					<img id="doppler_4" src="">
-					<img id="doppler_5" src="">
-					<img id="doppler_6" src="">
-					<img id="doppler_7" src="">
-					<img id="doppler_8" src="">
-					<img id="doppler_9" src="">
+					<img class="doppler_img" id="doppler_0copy" src="">
 				</div>
 			</div>
 		</header>
 		<main> <!--TODO: add JS code for time/temp requests-->
 			<div class="header-main">
-				<img src="assets\downArrow.svg">
+				<img onclick="slideDown()" src="assets\downArrow.svg">
 			</div>
 			<div class="weather-main">
 				<h1 id= "weather-time0"></h1>
@@ -128,6 +100,6 @@
 	</body>
 
 	<script language="javascript">makeCorsRequest("Davis", "CA");</script>
-	<script lang="javascript">populateImages();</script>
+	<script lang="javascript"></script>
 </html>
 

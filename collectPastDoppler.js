@@ -1,6 +1,7 @@
 
 let imageArray = []  // global variable to hold stack of images for animation 
 let count = 0;          // global var
+let i = 0;
 
 
 function addToArray(newImage) {
@@ -47,17 +48,15 @@ function getTenImages() {
 
 }
 
-
 function populateImages(){
-	getTenImages();
-	// for(let i = 0; i < 10; i++){
-	// 	document.getElementById(imageArray[i].id.toString()).src = imageArray[i].src;
-	// }
+	if(i == 10){
+		i = 0;
+	}
+	document.getElementById("doppler_"+0).src = imageArray[i].src;
+	document.getElementById("doppler_"+0+"copy").src = imageArray[i].src;
+	i++;
 }
 
-
-
-
-
-
+getTenImages();
+let load = setInterval(populateImages, 170);
 
