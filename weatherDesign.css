@@ -552,7 +552,9 @@ main{
 		flex: 1;
 		display: flex;
 		justify-content: center;
-		align-content: center;
+		align-items: center;
+
+		margin-bottom: 27%;
 	}
 
 	.title-header{
